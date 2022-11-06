@@ -20,7 +20,7 @@ public class ConversationCsvReaderConfig {
                 .name("csvFileReader")
                 .resource(fileConversations)
                 .delimited()
-                .names(new String[]{"date", "status", "message"})
+                .names(new String[]{"data", "status", "message"})
                 .targetType(Conversation.class)
                 .build();
     }
