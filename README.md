@@ -1,9 +1,9 @@
-# API Conversations Batch
+## API Conversations Batch
 
 API criada com objetivo de ler registros de arquivo (csv), armazenar os dados em um banco de dados e gerenciar
 conversas.
 
-## :wrench: Tecnologias utilizadas
+### :wrench: Tecnologias utilizadas
 
 - Linguagens [Java 11, Javascript, CSS e HTML]
 - Frameworks [SpringBoot, SpringBatch, SpringMVC, Maven]
@@ -12,7 +12,7 @@ conversas.
 - Testes unitários [JUnit 5]
 - Coverage [Jacoco]
 
-## :rocket: Execução da API
+### :rocket: Execução da API
 
 Realizar o clone do projeto:
 
@@ -26,7 +26,7 @@ Executar o clean e instalação do Maven na pasta do projeto:
 $ mvn clean install
 ```
 
-## Links Uteis
+### Links Uteis
 
 | Descrição | Link   | Status |
 | ------     | ------ | ------ |
@@ -34,19 +34,20 @@ $ mvn clean install
 | Página - Gerenciador API Conversation | http://localhost:8080/index.html | (em andamento) |
 | Página - Registros API Conversation | http://localhost:8080/conversation.html | (em andamento) |
 
-## Coverage
+### Coverage
+
 Execute a linha de comando maven:
 ```sh
 mvn clean verify
 ```
-![image](https://user-images.githubusercontent.com/45856882/200409968-cd4f0371-bde8-48dc-a78f-f9073d1ecc28.png)
-
 | Descrição | Link | Status |
 | ------     | ------ | ------ |
 | Relatório de cobertura de testes | target/site/jacoco/index.html | (em andamento: cobertura atual 66%)
 
+![image](https://user-images.githubusercontent.com/45856882/200409968-cd4f0371-bde8-48dc-a78f-f9073d1ecc28.png)
 
-## Documentação da API
+
+### Documentação da API
 
 Endpoints:
 
@@ -57,7 +58,7 @@ Endpoints:
 |GET    |http://localhost:8080/v1/conversations/{id}| Listar conversa por Id  (OK) |
 |DELETE |http://localhost:8080/v1/conversations/{id}| Deletar conversa por Id (OK) |
 
-## :soon: TODO Próximos Passos/Melhorias
+### :soon: TODO Próximos Passos/Melhorias
 
 - **API/Código:**
   - Tratamento de erros e exceptions
