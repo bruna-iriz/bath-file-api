@@ -3,13 +3,14 @@
 API criada com objetivo de ler registros de arquivo (csv), armazenar os dados em um banco de dados e gerenciar
 conversas.
 
-- Java 11
-- MySQL
-- Swagger
-- JUnit 5
-- Jacoco (Coverage)
+- Linguagens [Java 11, Javascript, CSS e HTML]
+- Frameworks [SpringBoot, SpringBatch, SpringMVC, Maven]
+- Banco de dados [MySQL]
+- Documentação [Swagger]
+- Testes unitários [JUnit 5]
+- Coverage [Jacoco]
 
-# Execução da API!
+# Execução da API
 
 Realizar o clone do projeto:
 
@@ -21,18 +22,6 @@ Executar o clean e instalação do Maven na pasta do projeto:
 
 ```sh
 $ mvn clean install
-```
-
-Acessar a pasta Docker presente no projeto e executar os comandos:
-
-```sh
-$ docker build -t conversations.api
-```
-
-Após build, executar o comando a seguir:
-
-```sh
-$ docker run -p 8080:8080 conversations.api
 ```
 
 ### Links Uteis
@@ -64,3 +53,4 @@ Endpoints:
 |GET    |http://localhost:8080/v1/conversations | Listar todas as conversas (OK) | 
 |GET    |http://localhost:8080/v1/conversations/{id}| Listar conversa por Id  (OK) |
 |DELETE |http://localhost:8080/v1/conversations/{id}| Deletar conversa por Id (OK) |
+
