@@ -40,9 +40,9 @@ $ docker run -p 8080:8080 conversations.api
 
 Endpoints:
 
-| HTTP | ENDPOINT   | STATUS |
+| HTTP | ENDPOINT   | DESCRIÇÃO - STATUS |
 | ------     | ------ | ------ |
 |GET	|http://localhost:8080/v1/conversations/batch | Leitura do arquivo Batch (em andamento) |
-|GET    |http://localhost:8080/v1/conversations | Listar todas as conversas  |
-|GET    |http://localhost:8080/v1/conversations/{id}| Listar conversa por Id  |
-|DELETE |http://localhost:8080/v1/conversations/{id}| Deletar conversa por Id  |
+|GET    |http://localhost:8080/v1/conversations | Listar todas as conversas (OK) | 
+|GET    |http://localhost:8080/v1/conversations/{id}| Listar conversa por Id  (OK) |
+|DELETE |http://localhost:8080/v1/conversations/{id}| Deletar conversa por Id (OK) |
