@@ -28,16 +28,12 @@ public class ConversationService {
     private static final Logger LOGGER = LoggerFactory.getLogger(ConversationService.class);
 
     public BatchStatus batchExecute() {
-
-//        LOGGER.info("Start execution" + DateUtils.getNow());
-
         Map<String, JobParameter> map = new HashMap<>();
         map.put("time", new JobParameter(System.currentTimeMillis()));
 
         try {
             JobExecution jobExecution = jobLauncher.run(job, new JobParameters(map));
             while (jobExecution.isRunning()) {
-//                LOGGER.info("Job execution...");
             }
             return jobExecution.getStatus();
         } catch (Exception e) {

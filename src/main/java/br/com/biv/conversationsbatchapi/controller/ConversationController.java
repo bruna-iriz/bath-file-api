@@ -3,6 +3,7 @@ package br.com.biv.conversationsbatchapi.controller;
 import br.com.biv.conversationsbatchapi.domain.Conversation;
 import br.com.biv.conversationsbatchapi.service.ConversationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
@@ -23,17 +24,20 @@ public class ConversationController {
     }
 
     @GetMapping
+    @ResponseStatus(HttpStatus.OK)
     public List<Conversation> findAll() {
         return conversationService.listAll();
     }
 
     @GetMapping("/{id}")
-    public Optional<Conversation> findById(@RequestParam Long id) {
+    @ResponseStatus(HttpStatus.OK)
+    public Optional<Conversation> findById(@RequestParam(value = "id", required = false) Long id) {
         return conversationService.findById(id);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteById(@RequestParam Long id) {
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteById(@RequestParam(value = "id", required = false) Long id) {
         conversationService.deleteById(id);
     }
 }
