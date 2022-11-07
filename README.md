@@ -3,6 +3,8 @@
 API criada com objetivo de ler registros de arquivo (csv), armazenar os dados em um banco de dados e gerenciar
 conversas.
 
+## :wrench: Tecnologias utilizadas
+
 - Linguagens [Java 11, Javascript, CSS e HTML]
 - Frameworks [SpringBoot, SpringBatch, SpringMVC, Maven]
 - Banco de dados [MySQL]
@@ -10,12 +12,12 @@ conversas.
 - Testes unitários [JUnit 5]
 - Coverage [Jacoco]
 
-# Execução da API
+## :rocket: Execução da API
 
 Realizar o clone do projeto:
 
 ```sh
-$ git clone <project>
+$ git clone https://github.com/bruna-iriz/bath-file-api.git
 ```
 
 Executar o clean e instalação do Maven na pasta do projeto:
@@ -24,7 +26,7 @@ Executar o clean e instalação do Maven na pasta do projeto:
 $ mvn clean install
 ```
 
-### Links Uteis
+## Links Uteis
 
 | Descrição | Link   | Status |
 | ------     | ------ | ------ |
@@ -32,18 +34,19 @@ $ mvn clean install
 | Página - Gerenciador API Conversation | http://localhost:8080/index.html | (em andamento) |
 | Página - Registros API Conversation | http://localhost:8080/conversation.html | (em andamento) |
 
-### Coverage
+## Coverage
 Execute a linha de comando maven:
 ```sh
 mvn clean verify
 ```
+![image](https://user-images.githubusercontent.com/45856882/200409968-cd4f0371-bde8-48dc-a78f-f9073d1ecc28.png)
 
 | Descrição | Link | Status |
 | ------     | ------ | ------ |
 | Relatório de cobertura de testes | target/site/jacoco/index.html | (em andamento: cobertura atual 66%)
 
 
-### Documentação da API
+## Documentação da API
 
 Endpoints:
 
@@ -54,3 +57,23 @@ Endpoints:
 |GET    |http://localhost:8080/v1/conversations/{id}| Listar conversa por Id  (OK) |
 |DELETE |http://localhost:8080/v1/conversations/{id}| Deletar conversa por Id (OK) |
 
+## :soon: TODO Próximos Passos/Melhorias
+
+- **API/Código:**
+  - Tratamento de erros e exceptions
+  - Melhoria da estrutura e design do projeto
+  - Melhoria de logs
+  - Melhoria no layout das páginas
+  - Validação do arquivo csv
+
+- **TESTES | QUALIDADE:**
+  - Arquitetura de código [ArchUnit]
+  - Qualidade de código [SonarQube]
+  - Criar novos cenários de testes e aumentar o coverage
+
+- **CONTEINERIZÇÃO:**
+  - Empacotamento do código de software e suas bilbilotecas (em andamento) [Docker]
+
+- **OBSERVABILIDADE & MONITORIA**
+
+> :construction: Projeto em construção :construction:
