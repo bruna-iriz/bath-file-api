@@ -51,7 +51,7 @@ public class ConversationCsvReaderConfig {
                 .name("csvFileReader")
                 .resource(fileConversations)
                 .delimited()
-                .names(new String[]{"data", "status", "message"})
+                .names(new String[]{"data", "status", "mensagem"})
                 .targetType(Conversation.class)
                 .build();
     }

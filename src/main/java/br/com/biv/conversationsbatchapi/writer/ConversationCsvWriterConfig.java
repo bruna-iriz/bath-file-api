@@ -16,11 +16,6 @@ import java.sql.SQLException;
 @Configuration
 public class ConversationCsvWriterConfig {
 
-//    @Bean
-//    public ItemWriter<Conversation> csvFileWriter() {
-//        return items -> items.forEach(System.out::println);
-//    }
-
     @Bean
     public JdbcBatchItemWriter<Conversation> csvFileWriter(@Qualifier("appDataSource") DataSource dataSource) {
         return new JdbcBatchItemWriterBuilder<Conversation>()
@@ -30,13 +25,11 @@ public class ConversationCsvWriterConfig {
                 .build();
     }
 
-
     private ItemPreparedStatementSetter<Conversation> itemPreparedStatementSetter() {
         return new ItemPreparedStatementSetter<Conversation>() {
 
             @Override
             public void setValues(Conversation conversation, PreparedStatement ps) throws SQLException {
-//                ps.setLong(1, conversation.getId());
                 ps.setString(1, conversation.getData());
                 ps.setString(2, conversation.getStatus());
                 ps.setString(3, conversation.getMensagem());

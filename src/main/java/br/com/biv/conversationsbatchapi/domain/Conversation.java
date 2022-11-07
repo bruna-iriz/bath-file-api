@@ -13,7 +13,7 @@ import java.io.Serializable;
 @Getter
 @Setter
 @Entity
-@Builder
+//@Builder
 public class Conversation implements Serializable {
 
     private static final long serialVersionUID = 2l;
@@ -21,12 +21,6 @@ public class Conversation implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
-//    @Id
-//    @NotNull
-//    @GeneratedValue(strategy = GenerationType.AUTO)
-//    private Long id;
-
     private String data;
     private String status;
     private String mensagem;
