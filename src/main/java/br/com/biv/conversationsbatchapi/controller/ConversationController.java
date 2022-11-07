@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/v1/api/conversations")
+@RequestMapping("/v1/conversations")
 @EnableSwagger2
 public class ConversationController {
 
