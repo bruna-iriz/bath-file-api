@@ -7,6 +7,7 @@ conversas.
 - MySQL
 - Swagger
 - JUnit 5
+- Jacoco (Coverage)
 
 # Execução da API!
 
@@ -36,11 +37,22 @@ $ docker run -p 8080:8080 conversations.api
 
 ### Links Uteis
 
-| Ferramenta | Link   | Status |
+| Descrição | Link   | Status |
 | ------     | ------ | ------ |
 | Swagger | http://localhost:8080/api/swagger-ui.html| (OK) |
 | Página - Gerenciador API Conversation | http://localhost:8080/index.html | (em andamento) |
 | Página - Registros API Conversation | http://localhost:8080/conversation.html | (em andamento) |
+
+### Coverage
+Execute a linha de comando maven:
+```sh
+mvn clean verify
+```
+
+| Descrição | Link | Status |
+| ------     | ------ | ------ |
+| Relatório de cobertura de testes | target/site/jacoco/index.html | (em andamento: cobertura atual 66%)
+
 
 ### Documentação da API
 
