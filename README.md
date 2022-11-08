@@ -44,7 +44,7 @@ mvn clean verify
 | ------     | ------ | ------ |
 | Relatório de cobertura de testes | target/site/jacoco/index.html | (em andamento: cobertura atual 73%)
 
-![img.png](img.png)![image](https://user-images.githubusercontent.com/45856882/200409968-cd4f0371-bde8-48dc-a78f-f9073d1ecc28.png)
+![img.png](img.png)
 
 
 ### Documentação da API
