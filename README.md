@@ -53,7 +53,7 @@ Endpoints:
 
 | HTTP | ENDPOINT   | DESCRIÇÃO - STATUS |
 | ------     | ------ | ------ |
-|GET    |http://localhost:8080/v1/conversations/batch | Leitura do arquivo Batch (em andamento) |
+|POST   |http://localhost:8080/v1/conversations/batch | Ler arquivo csv e salvar no banco de dados (OK) |
 |GET    |http://localhost:8080/v1/conversations | Listar todas as conversas (OK) | 
 |GET    |http://localhost:8080/v1/conversations/{id}| Listar conversa por Id  (OK) |
 |DELETE |http://localhost:8080/v1/conversations/{id}| Deletar conversa por Id (OK) |

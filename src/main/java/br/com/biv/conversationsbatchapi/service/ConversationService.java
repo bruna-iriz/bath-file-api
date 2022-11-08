@@ -40,6 +40,7 @@ public class ConversationService {
             LOGGER.info("Fail job execution..." + e.getMessage());
             return BatchStatus.FAILED;
         }
+
     }
 
     public List<Conversation> listAll() {

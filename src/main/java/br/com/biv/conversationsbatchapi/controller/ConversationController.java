@@ -10,16 +10,17 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import java.util.List;
 import java.util.Optional;
 
+@EnableSwagger2
 @RestController
 @RequestMapping("/v1/conversations")
-@EnableSwagger2
 public class ConversationController {
 
     @Autowired
     private ConversationService conversationService;
 
-    @GetMapping("/batch")
-    public String execute() {
+    @PostMapping("/batch")
+    @ResponseStatus(HttpStatus.CREATED)
+    public String loadRecords() {
         return conversationService.batchExecute().toString();
     }
 

@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.io.Resource;
+import org.springframework.core.io.PathResource;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 
 import javax.sql.DataSource;
@@ -46,10 +46,10 @@ public class ConversationCsvReaderConfig {
     @Bean
     @StepScope
     public FlatFileItemReader<Conversation> csvFileReader(
-            @Value("#{jobParameters['fileConversations']}") Resource fileConversations) {
+            @Value("#{jobParameters['fileConversations']}") String pathToFile) {
         return new FlatFileItemReaderBuilder<Conversation>()
                 .name("csvFileReader")
-                .resource(fileConversations)
+                .resource(new PathResource("files/conversations-300.csv"))
                 .delimited()
                 .names(new String[]{"data", "status", "mensagem"})
                 .targetType(Conversation.class)
