@@ -49,7 +49,7 @@ public class ConversationCsvReaderConfig {
             @Value("#{jobParameters['fileConversations']}") String pathToFile) {
         return new FlatFileItemReaderBuilder<Conversation>()
                 .name("csvFileReader")
-                .resource(new PathResource("files/conversations-300.csv"))
+                .resource(new PathResource("src/main/resources/file/conversations-300.csv"))
                 .delimited()
                 .names(new String[]{"data", "status", "mensagem"})
                 .targetType(Conversation.class)
