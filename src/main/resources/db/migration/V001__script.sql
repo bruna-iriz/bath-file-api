@@ -1,7 +1,3 @@
-CREATE DATABASE db_batch;
-CREATE DATABASE app;
-USE app;
-
 CREATE table conversation (
 	id int auto_increment,
 	data VARCHAR(20),

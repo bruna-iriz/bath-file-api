@@ -57,6 +57,12 @@
             <artifactId>mysql-connector-j</artifactId>
             <scope>runtime</scope>
         </dependency>
+        <!--Flyway - Database Version Control-->
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+            <version>7.8.0</version>
+        </dependency>
         <!--JUnit-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -106,7 +112,7 @@
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.6</version>
                 <configuration>
-<!--                    <skip>${maven.unit-test.skip}</skip>-->
+                    <!--                    <skip>${maven.unit-test.skip}</skip>-->
                     <excludes>
                         <exclude>**/conversationsbatchapi/config/**/*.*</exclude>
                         <exclude>**/conversationsbatchapi/config/*.*</exclude>
@@ -138,9 +144,9 @@
                                     <element>CLASS</element>
                                     <limits>
                                         <limit>
-                                            <counter>LINE</counter>
+                                            <counter>CLASS</counter>
                                             <value>COVEREDRATIO</value>
-                                            <minimum>0.10</minimum>
+                                            <minimum>0.45</minimum>
                                         </limit>
                                     </limits>
                                 </rule>

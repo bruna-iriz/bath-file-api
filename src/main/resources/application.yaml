@@ -10,16 +10,27 @@ spring:
     job:
       enabled: false
   datasource:
-    jdbcUrl: jdbc:mysql://localhost:3306/app?useUnicode=true&charactedEncoding=UTF-8&useTimezone=true&serverTimezone=UTC
+    jdbcUrl: jdbc:mysql://localhost:3306/app?createDatabaseIfNotExist=true&autoReconnect=true&useUnicode=true&charactedEncoding=UTF-8&useTimezone=true&serverTimezone=UTC
     username: user
     password: biv@user
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        naming_strategy: org.hibernate.cfg.ImprovedNamingStrategy:app
+    show-sql: true
+
 app:
   datasource:
     jdbcUrl: jdbc:mysql://localhost:3306/app
     username: user
     password: biv@user
     driver-class-name: com.mysql.cj.jdbc.Driver
-
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        naming_strategy: org.hibernate.cfg.ImprovedNamingStrategy:app
 
 
 

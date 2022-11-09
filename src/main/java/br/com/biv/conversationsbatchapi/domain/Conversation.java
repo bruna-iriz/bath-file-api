@@ -7,11 +7,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
 
 @Getter
 @Setter
 @Entity
+@Table(name = "conversation")
 public class Conversation implements Serializable {
 
     private static final long serialVersionUID = 2l;
@@ -25,7 +27,7 @@ public class Conversation implements Serializable {
 
     @Override
     public String toString() {
-        return "Conversation{" +
+        return "conversation{" +
                 "id='" + id + "'" +
                 "data='" + data + "'" +
                 ", status ='" + status + "'" +

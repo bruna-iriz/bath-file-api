@@ -8,6 +8,7 @@ conversas.
 - Linguagens [Java 11, Javascript, CSS e HTML]
 - Frameworks [SpringBoot, SpringBatch, SpringMVC, Maven]
 - Banco de dados [MySQL]
+- Script e versionamento do banco de dados [Flyway]
 - Documentação [Swagger]
 - Testes unitários [JUnit 5]
 - Coverage [Jacoco]
