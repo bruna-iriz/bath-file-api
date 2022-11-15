@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "0dbf70f1-5a46-4747-b76b-f2c0256cbac4",
+		"name": "API Conversations",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5758803"
+	},
+	"item": [
+		{
+			"name": "[CONVERSATIONS] List all conversations",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/v1/conversations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"conversations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[CONVERSATIONS] List conversation by id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/v1/conversations/{id}?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"conversations",
+						"{id}"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[CONVERSATIONS] Delete conversation by id",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/v1/conversations/{id}?id=21",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"conversations",
+						"{id}"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "21"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[CONVERSATIONS] Load records from conversations.csv",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/v1/conversations/batch",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"conversations",
+						"batch"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
