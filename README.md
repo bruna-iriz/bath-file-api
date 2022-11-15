@@ -13,7 +13,7 @@ conversas.
 - Testes unitários [JUnit 5]
 - Coverage [Jacoco]
 
-### :rocket: Execução da API
+### :rocket: Execução da API - Padrão
 
 Realizar o clone do projeto:
 
@@ -25,6 +25,19 @@ Executar o clean e instalação do Maven na pasta do projeto:
 
 ```sh
 $ mvn clean install
+```
+
+### :rocket: Execução da API - Docker (a validar se executa corretamente, pois aprensentou instabilidade)
+Executar o clean e instalação do Maven na pasta do projeto:
+
+```sh
+$ mvn clean install
+```
+```sh
+$ mvn clean package
+```
+```sh
+$ docker-compose up --build
 ```
 
 ### Links Uteis
@@ -59,14 +72,18 @@ Endpoints:
 |GET    |http://localhost:8080/v1/conversations/{id}| Listar conversa por Id  (OK) |
 |DELETE |http://localhost:8080/v1/conversations/{id}| Deletar conversa por Id (OK) |
 
-### :soon: TODO Próximos Passos/Melhorias
+- A coleção com as chamadas através do Postman está no diretório: ```./conversations-batch-api/postman```
+
+### :soon: BACKLOG - Melhorias
 
 - **API/Código:**
-  - Tratamento de erros e exceptions
-  - Melhoria da estrutura e design do projeto
+  - Tratamento de erros/exceptions
+  - Melhoria na estrutura de camadas e design do projeto
   - Melhoria de logs
-  - Melhoria no layout das páginas
   - Validação do arquivo csv
+  - Agendamento automático de leitura do arquivo
+  - Incluir paginação ao listar todas conversas
+  - Melhoria no layout das páginas
 
 - **TESTES | QUALIDADE:**
   - Arquitetura de código [ArchUnit]
@@ -74,8 +91,9 @@ Endpoints:
   - Criar novos cenários de testes e aumentar o coverage
 
 - **CONTEINERIZÇÃO:**
-  - Empacotamento do código de software e suas bilbilotecas (em andamento) [Docker]
+  - Empacotamento do código/bilbilotecas (em andamento) [Docker]
 
 - **OBSERVABILIDADE & MONITORIA**
+
 
 > :construction: Projeto em construção :construction:

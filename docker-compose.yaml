@@ -1,26 +1,44 @@
-#version: '3'
-#services:
-#  conversations-batch-api:
-#    build:
-#      context: ./
-#      dockerfile: ./Dockerfile
-#    image: conversations-batch-api_com_mysql/api
-#    ports:
-#      - '8080:8080'
-#      - '5005:5005'
-#    environment:
-#      - ADDITIONAL_OPTS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005 -Xmx1G -Xms128m -XX:MaxMetaspaceSize=128m
-#      - PROFILE=dev
-#    links:
-#      - db
-#  db:
-#    image: mysql:5.7
-#    ports:
-#      - '3306:3306'
-#    environment:
-#      - MYSQL_ROOT_HOST=%
-#      - MYSQL_DATABASE=app
-#      - MYSQL_USER=user
-#      - MYSQL_PASSWORD=biv@user
-#    volumes:
-#      - ./docker/volume_mysql:/var/lib/mysql
+version: '3'
+networks:
+  net:
+    driver: bridge
+
+services:
+  db:
+    image: mysql:5.7
+    ports:
+      - '3306:3306'
+    networks:
+      net:
+    environment:
+      - JDBC_URL=jdbc:mysql://app:3306/app?createDatabaseIfNotExist=true&autoReconnect=true&useUnicode=true&charactedEncoding=UTF-8&useTimezone=true&serverTimezone=UTC
+      - JDBC_DRIVER=com.mysql.cj.jdbc.Driver
+      - MYSQL_ROOT_HOST=%
+      - MYSQL_DATABASE=app
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=biv@user
+  flyway:
+    image: flyway/flyway
+    networks:
+      net:
+    command: -url=jdbc:mysql://app -schemas=myschema -user=user -password=biv@user -connectRetries=60 migrate
+    #    command: ["/wait-for-it.sh", "db:3306", "flyway", "-t", "30", "--", "java", "-jar", "api.jar"]
+    depends_on:
+      - db
+
+  conversations-batch-api:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    image: conversations-batch-api
+    ports:
+      - '8080:8080'
+      - '5005:5005'
+    networks:
+      net:
+    environment:
+      - ADDITIONAL_OPTS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005 -Xmx1G -Xms128m -XX:MaxMetaspaceSize=128m
+      - PROFILE=dev
+    depends_on:
+      - db
+      - flyway

@@ -17,6 +17,8 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        generate-ddl: true
+        ddl-auto: update
         naming_strategy: org.hibernate.cfg.ImprovedNamingStrategy:app
     show-sql: true
 
@@ -29,7 +31,9 @@ app:
   jpa:
     properties:
       hibernate:
+        ddl-auto: update
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        generate-ddl: true
         naming_strategy: org.hibernate.cfg.ImprovedNamingStrategy:app
 
 
